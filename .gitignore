@@ -1,0 +1,7 @@
+*.txt
+assets/occurrence_entering/
+assets/models/
+runs/
+*.png
+*.jpeg
+*.jpg
