@@ -1,4 +1,4 @@
-*.txt
+bb_results.txt
 assets/occurrence_entering/
 assets/models/
 runs/
