@@ -15,6 +15,15 @@ Projeto para processamento de vídeos com detecção de objetos usando YOLO e ge
 pip install -r requirements.txt
 ```
 
+2. Caso esteja em um ambiente sem dependências gráficas:
+
+```
+sudo apt update
+sudo apt install -y libgl1 libglib2.0-0
+# If libgl1 isn't available, try:
+# sudo apt install -y libgl1-mesa-glx
+```
+
 ## 📹 Processamento de Vídeos
 
 ### Executar inferência em todos os vídeos:
