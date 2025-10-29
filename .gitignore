@@ -8,3 +8,4 @@ runs/
 *.jpg
 nohup.out
 results/
+selected_videos/
