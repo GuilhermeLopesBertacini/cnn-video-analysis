@@ -7,3 +7,4 @@ runs/
 *.jpeg
 *.jpg
 nohup.out
+results/
