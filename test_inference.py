@@ -13,6 +13,7 @@ Uso:
 """
 
 import argparse
+import os
 import sys
 from pathlib import Path
 from typing import Optional
@@ -116,7 +117,7 @@ def find_videos(videos_dir: Path, exts=None):
 
 def parse_args():
     p = argparse.ArgumentParser(description="Visualizador de inferência YOLO (desenhar bounding boxes)")
-    p.add_argument('--videos_dir', type=Path, default=Path('selected_videos/3'), help='Diretório com vídeos')
+    p.add_argument('--class-id', type=str, help='ID da classe para filtrar vídeos')
     p.add_argument('--model', type=str, default='assets/models/yolo8_nano_640_43750_otimizado.pt', help='Caminho para o modelo YOLO')
     p.add_argument('--device', type=str, default='auto', choices=['auto', 'cpu', 'cuda'], help="Dispositivo a usar: 'auto' detecta CUDA se disponível")
     return p.parse_args()
@@ -129,7 +130,7 @@ def main():
         device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     print(f"Usando dispositivo: {device}")
-    videos_dir = args.videos_dir
+    videos_dir = Path(os.path.join('selected_videos', args.class_id))
     if not videos_dir.exists():
         print(f"Diretório não encontrado: {videos_dir}")
         return
